@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<h2>Welcome</h2>
+		<p>Welcome to our website!</p>
+		<p>
+			You are now logged in as: <strong id="username"></strong>
+		</p>
+		<button onclick="logout()">Logout</button>
+	</div>
+
+	<script>
+    // Retrieve username from sessionStorage
+    var username = sessionStorage.getItem('username');
+    // Display username on the page
+    document.getElementById('username').textContent = username;
+
+    // Logout function
+    function logout() {
+        // Clear sessionStorage
+        sessionStorage.clear();
+        // Redirect to login page
+        window.location.href = 'login.html';
+    }
+</script>
+
+</body>
+</html>
+
+

@@ -51,6 +51,23 @@
 </style>
 </head>
 <body>
+    <%
+        // Check if session is null
+        HttpSession session1 = request.getSession(false);
+        if(session == null || session.getAttribute("username") == null) {
+            // Redirect to login page
+            response.sendRedirect("login.jsp");
+        } else {
+            // Session exists, user is logged in
+            String username = (String) session.getAttribute("username");
+    %>
+            <h1>Welcome, <%= username %>!</h1>
+            <!-- Other content for logged in users -->
+    <%
+        }
+    %>
+
+
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
 			<!-- Logo -->

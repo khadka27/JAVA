@@ -41,4 +41,8 @@
     <servlet-name>EditProfileServlet</servlet-name>
     <url-pattern>/LearingMVC/EditProfileServlet</url-pattern>
 </servlet-mapping>
+
+ <listener>
+        <listener-class>com.abi.RegisterServlet.SessionListener</listener-class>
+    </listener>
 </element>
